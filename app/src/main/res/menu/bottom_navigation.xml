@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/monday"
+        android:visible="true"
+        android:icon="@drawable/ic_calendar_today"
+        android:title="Пн" />
+    <item
+        android:id="@+id/tuesday"
+        android:visible="true"
+        android:icon="@drawable/ic_calendar_today"
+        android:title="Вт" />
+    <item
+        android:id="@+id/wednesday"
+        android:visible="true"
+        android:icon="@drawable/ic_calendar_today"
+        android:title="Ср" />
+
+    <item
+        android:id="@+id/thursday"
+        android:visible="true"
+        android:icon="@drawable/ic_calendar_today"
+        android:title="Чт" />
+
+    <item
+        android:id="@+id/friday"
+        android:visible="true"
+        android:icon="@drawable/ic_calendar_today"
+        android:title="Пт" />
+</menu>

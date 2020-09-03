@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
+    android:background="#ffffff"
+    tools:openDrawer="start">
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            app:title="Головна"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+         <LinearLayout
+             android:layout_below="@id/toolbar"
+             android:layout_above="@id/bottom_navigation"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+          >
+
+             <TextView
+                 android:id="@+id/textDay"
+                 android:gravity="center"
+                 android:layout_gravity="center"
+                 android:typeface="serif"
+                 android:layout_marginTop="7dp"
+                 android:textColor="#000000"
+                 android:textSize="22sp"
+                 android:text="Ваш розклад на сьогодні"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginTop="5dp"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_margin="3dp"
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:padding="3dp"
+                    android:scrollbars="vertical" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+             <TextView
+                 android:id="@+id/textNextDay"
+                 android:gravity="center"
+                 android:layout_gravity="center"
+                 android:typeface="serif"
+                 android:layout_marginTop="10dp"
+                 android:textColor="#000000"
+                 android:textSize="22sp"
+                 android:text="Ваш розклад на "
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+
+             <androidx.core.widget.NestedScrollView
+                 android:layout_marginTop="5dp"
+                 android:background="#ffffff"
+                 android:padding="5dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <LinearLayout
+                     android:background="#ffffff"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
+
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:layout_margin="3dp"
+                         android:id="@+id/recyclerView2"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="#ffffff"
+                         android:padding="3dp"
+                         android:scrollbars="vertical" />
+
+                 </LinearLayout>
+
+             </androidx.core.widget.NestedScrollView>
+
+         </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
